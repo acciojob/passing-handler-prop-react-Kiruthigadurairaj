@@ -20,6 +20,11 @@ html, body {
     top: -15%;
 }
 
+.row {
+    display: flex;
+    margin: 0 auto;
+}
+
 .holder {
     display: flex;
     margin: auto;

@@ -1,30 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
+import "../styles/Selection.css";
 
 const Selection = ({ applyColor }) => {
-  const [boxStyle, setBoxStyle] = useState({ background: "" });
+  console.log("Selection applyColor background is == ", applyColor().background);
+
+  function helper(e) {
+    e.target.style.backgroundColor = applyColor().background;
+  }
 
   return (
-    <div
-      className="fix-box"
-      style={{
-        backgroundColor: boxStyle.background,
-        width: "100px",
-        height: "100px",
-        border: "2px solid white",
-        textAlign: "center",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontWeight: "bold",
-        color: "white",
-        cursor: "pointer"
-      }}
-      onClick={() => applyColor(setBoxStyle)} // Apply color function
-    >
-      Selection
+    <div>
+      <div className="fix-box" onClick={helper}>
+        <h2>Selection</h2>
+      </div>
     </div>
   );
 };
 
 export default Selection;
-
